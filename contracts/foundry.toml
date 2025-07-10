@@ -14,4 +14,4 @@ remappings = [
     "@sp1-contracts/=lib/sp1-contracts/contracts/src/"
 ]
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+fs_permissions = [{ access = "read", path = "../samples"}, { access = "readwrite", path = "deployments" }]

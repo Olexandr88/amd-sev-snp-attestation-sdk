@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 import "../utils/X509Helper.sol";
-import "../types/Structs.sol";
 import {LibString} from "solady/utils/LibString.sol";
+import {ProcessorType, CertType, TcbVersion} from "../types/SevSnpTypes.sol";
 
 /**
  * @title KDS Base Contract

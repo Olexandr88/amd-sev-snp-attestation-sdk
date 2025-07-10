@@ -3,17 +3,6 @@ pragma solidity ^0.8.0;
 
 import {BytesUtils} from "../utils/BytesUtils.sol";
 
-enum ProcessorType {
-    // 7003 series AMD EPYC Processor
-    Milan,
-    // 9004 series AMD EPYC Processor
-    Genoa,
-    // 97x4 series AMD EPYC Processor
-    Bergamo,
-    // 8004 series AMD EPYC Processor
-    Siena
-}
-
 enum CertType {
     // Versioned Chip Endorsement Key
     VCEK,
@@ -116,4 +105,15 @@ library AttestationReportLib {
             revert("Unknown VEK type");
         }
     }
+}
+
+enum ProcessorType {
+    // 7003 series AMD EPYC Processor
+    Milan,
+    // 9004 series AMD EPYC Processor
+    Genoa,
+    // 97x4 series AMD EPYC Processor
+    Bergamo,
+    // 8004 series AMD EPYC Processor
+    Siena
 }
