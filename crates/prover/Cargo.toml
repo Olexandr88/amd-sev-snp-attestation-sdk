@@ -1,0 +1,37 @@
+[package]
+name = "amd-sev-snp-attestation-prover"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = ["risc0", "sp1"]
+sp1 = ["dep:sp1-sdk", "dep:sp1-methods"]
+risc0 = ["dep:risc0-zkvm", "dep:risc0-methods", "dep:bonsai-sdk"]
+
+[dependencies]
+anyhow.workspace = true
+amd-sev-snp-attestation-verifier.workspace = true
+x509-verifier-rust-crypto.workspace = true
+risc0-zkvm = { workspace = true, optional = true, default-features = true }
+risc0-methods = { workspace = true, optional = true }
+sp1-methods = { workspace = true, optional = true }
+sp1-sdk = { workspace = true, optional = true }
+alloy-primitives.workspace = true
+bonsai-sdk = { workspace = true, optional = true }
+tokio.workspace = true
+log.workspace = true
+serde.workspace = true
+alloy-sol-types = { workspace = true, features = ["json"] }
+bincode.workspace = true
+risc0-ethereum-contracts.workspace = true
+serde_json.workspace = true
+alloy-provider = { workspace = true }
+alloy-network = { workspace = true }
+alloy-rpc-types = { workspace = true }
+alloy-signer-local = { workspace = true }
+tracing.workspace = true
+crossbeam.workspace = true
+lazy_static.workspace = true
+reqwest.workspace = true
