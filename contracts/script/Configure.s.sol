@@ -4,7 +4,6 @@ pragma solidity ^0.8.0;
 import {Script, console} from "forge-std/Script.sol";
 import {KDS} from "../src/KDS.sol";
 import "../src/SEVAgentAttestation.sol";
-import {ProcessorType} from "../src/interfaces/ISnpAttestation.sol";
 
 contract Configure is Script {
     uint256 privateKey = vm.envUint("PRIVATE_KEY");

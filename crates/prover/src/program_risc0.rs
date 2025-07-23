@@ -31,8 +31,8 @@ impl TryFrom<RiscZeroProverConfig> for RemoteProverConfig {
     type Error = anyhow::Error;
     fn try_from(value: RiscZeroProverConfig) -> anyhow::Result<Self> {
         Ok(RemoteProverConfig {
-            api_url: value.api_url.ok_or_else(|| anyhow!("missing api url"))?,
-            api_key: value.api_key.ok_or_else(|| anyhow!("missing api key"))?,
+            api_url: value.api_url.ok_or_else(|| anyhow!("missing BONSAI_API_URL"))?,
+            api_key: value.api_key.ok_or_else(|| anyhow!("missing BONSAI_API_KEY"))?,
         })
     }
 }
@@ -93,6 +93,7 @@ where
     fn upload_image(&self, cfg: &RemoteProverConfig) -> anyhow::Result<()> {
         let client = Client::from_parts(cfg.api_url.clone(), cfg.api_key.clone(), VERSION)?;
         let image_id = Digest::new(self.image_id);
+        println!("image_id: {:?}", image_id.to_string());
         client.upload_img(&image_id.to_string(), self.elf.to_vec())?;
         Ok(())
     }

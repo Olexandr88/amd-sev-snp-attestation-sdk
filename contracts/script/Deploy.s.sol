@@ -131,6 +131,11 @@ contract Deploy is Script {
         vm.stopBroadcast();
     }
 
+    function updateZkVerifiers(string memory sp1Program, string memory risc0Program) public {
+        setZkVerifier(sp1Program);
+        setZkVerifier(risc0Program);
+    }
+
     function deployAll(string memory rootCert, string memory sp1Program, string memory risc0Program) public {
         deployVerifier();
         setRootCert(rootCert);

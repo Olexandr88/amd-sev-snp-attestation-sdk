@@ -52,12 +52,6 @@ struct ZkCoProcessorConfig {
 }
 
 interface ISnpAttestation {
-    // 5f8daf95
-    error Unknown_Pcr10_Hash_Algo(uint16 hashAlgo);
-    // 21e22626
-    error Invalid_Certchain_Length();
-    // ab20140d
-    error Root_Of_Trust_Mismatch();
     // 51abd95c
     error Unknown_Zk_Coprocessor();
 

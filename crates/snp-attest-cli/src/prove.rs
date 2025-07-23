@@ -4,6 +4,7 @@ use std::{
 };
 
 use amd_sev_snp_attestation_prover::{set_prover_dev_mode, utils::AttestationReportWithVekCertChain};
+use amd_sev_snp_attestation_verifier::stub::VerifierJournal;
 use clap::Args;
 
 use crate::utils::{ContractArgs, ProverArgs};
@@ -71,6 +72,8 @@ impl ProveCli {
             report_with_cert_chain.vek_certs,
         )?;
 
+        let output: VerifierJournal = result.raw_proof.decode_journal()?;
+
         // Write proof to output file if specified
         if let Some(out) = &self.out {
             std::fs::write(out, result.encode_json()?)?;
@@ -78,6 +81,7 @@ impl ProveCli {
 
         // Display proof information to stdout
         println!("proof: {:?}", result);
+        println!("journal: {:?}", output);
 
         if self.submit_on_chain {
             let receipt = prover.submit_on_chain(&result)?;
