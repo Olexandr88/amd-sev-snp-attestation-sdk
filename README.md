@@ -16,7 +16,7 @@ Automata AMD SEV-SNP Attestation SDK is the most-feature complete SDK for AMD SE
 * Risc0 and Succinct ZK host and guest programs to interact with the corresponding zkVM servers to generate the proofs, and constructs the [Automata AMD SEV-SNP Attestation](https://explorer-testnet.ata.network/address/0xDe510E1F9258c94c5520B717210a301Cc8297F1F) contract calls to perform the on-chain verification.
 
 ### Environment Preparation
-Refer to [SEV-SNP](./sev-snp/README.md) to setup the AMD SEV-SNP CVM in different cloud service providers (CSP).
+Refer to [SEV-SNP](./sev-snp/README.md#generate-attestation) to setup the AMD SEV-SNP CVM in different cloud service providers (CSP).
 
 ## AMD SEV-SNP Attestation Generation
 Use [SEV-SNP](./sev-snp/README.md#generate-attestation) to generate the AMD SEV-SNP Attestation Report with VEK Cert, you can find an example in [sev_snp_attestation](./sev-snp/examples/attestation.rs).
