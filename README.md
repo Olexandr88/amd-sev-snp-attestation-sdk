@@ -19,7 +19,7 @@ Automata AMD SEV-SNP Attestation SDK is the most-feature complete SDK for AMD SE
 Refer to [SEV-SNP](./sev-snp/README.md) to setup the AMD SEV-SNP CVM in different cloud service providers (CSP).
 
 ## AMD SEV-SNP Attestation Generation
-Use [SEV-SNP](./sev-snp/README.md#generate-attestation) to generate the AMD SEV-SNP Attestation Report with VEK Cert, you can find an example in [sev_snp_attestation](./sev-snp/examples/attestation.rs).
+Use [SEV-SNP](./sev-snp/README.md#generate-attestation) to generate the AMD SEV-SNP Attestation Report with VEK Cert, you can find an example in [sev_snp_attestation](./verifier/src/attestation.rs).
 
 ## AMD SEV-SNP Attestation Verification
 Combining the Attestation Generation and the ZK Optimization, you can generate an either Risc0 or SP1 ZK proof with the AMD SEV-SNP Attestation Report and the VEK Cert output, and verify it via [verifyAndAttestWithZKProof](https://explorer-testnet.ata.network:443/address/0xDe510E1F9258c94c5520B717210a301Cc8297F1F?tab=read_contract#57859ce0) method.
@@ -85,7 +85,7 @@ export BOUNDLESS_PRIVATE_KEY="0x..."    # Your wallet private key (hex-encoded)
 export PINATA_JWT="..."                  # Pinata JWT for IPFS storage (for ELF uploads)
 ```
 
-For more information, see the [Boundless documentation](https://docs.boundless.xyz/).
+For more information, see the [Boundless documentation](https://docs.boundless.network/developers/quick-start).
 
 #### Succinct
 To get started, you need to have the following installed:
